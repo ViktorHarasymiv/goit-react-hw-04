@@ -9,5 +9,6 @@ export interface Movie {
 }
 
 export interface MoviesHttpResponse {
-  hits: Movie[];
+  results: Movie[];
+  total_pages: number;
 }
