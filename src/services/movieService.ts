@@ -1,6 +1,11 @@
 import axios from "axios";
 
-import type { MoviesHttpResponse } from "../types/movie";
+import type { Movie } from "../types/movie";
+
+interface MoviesHttpResponse {
+  results: Movie[];
+  total_pages: number;
+}
 
 axios.defaults.baseURL = "https://api.themoviedb.org/";
 
@@ -20,7 +25,7 @@ export const fetchMovies = async (
   try {
     const response = await axios.get<MoviesHttpResponse>(url, params);
 
-    return response.data || [];
+    return response.data || null;
   } catch (error) {
     console.error("Error fetching movies:", error);
     return null;
