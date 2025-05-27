@@ -5,7 +5,7 @@ import type { MoviesHttpResponse } from "../types/movie";
 axios.defaults.baseURL = "https://api.themoviedb.org/";
 
 const TOKEN: string =
-  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZTFmNjllZTRjZWNmOTFjMWNkOGY32ODAzNzZiZjU1NCIsIm5iZiI6MTc0MTkwODEyMS4wNjksInN1YiI6IjY3ZDM2ODk5ZmFjMTYzMGMyNjAyNmVkMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.t2fmtDgkZ89rHqB8C9WF7BzzKCAVoizYCSm4sAxq8zo";
+  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZTFmNjllZTRjZWNmOTFjMWNkOGY3ODAzNzZiZjU1NCIsIm5iZiI6MTc0MTkwODEyMS4wNjksInN1YiI6IjY3ZDM2ODk5ZmFjMTYzMGMyNjAyNmVkMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.t2fmtDgkZ89rHqB8C9WF7BzzKCAVoizYCSm4sAxq8zo";
 
 export const fetchMovies = async (
   query: string,
