@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
-import ReactPaginate from "react-paginate";
 import toast, { Toaster } from "react-hot-toast";
-import type { Movie } from "../../types/movie";
+import ReactPaginate from "react-paginate";
+
 import { fetchMovies } from "../../services/movieService";
+import type { Movie } from "../../types/movie";
 
 import styles from "./App.module.css";
 
@@ -37,7 +37,8 @@ export default function App() {
   }
 
   // SEARCH
-  const handleSearch = async (search: string): Promise<void> => {
+
+  const handleSearch = (search: string) => {
     setPage(1);
     setSearch(search);
   };
@@ -61,6 +62,8 @@ export default function App() {
   }, [data, isSuccess]);
 
   // Constant
+
+  console.log(isLoading);
 
   const totalPages = data?.total_pages ?? 0;
 
@@ -86,7 +89,7 @@ export default function App() {
       {data && data?.results.length > 0 && (
         <MovieGrid movies={data?.results} onSelect={onSelect} />
       )}
-      {isOpen && <MovieModal onClose={isActive} movie={movie} />}
+      {isOpen && movie && <MovieModal onClose={isActive} movie={movie} />}
     </div>
   );
 }
